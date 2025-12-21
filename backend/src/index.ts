@@ -12,12 +12,8 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 // Middleware
-app.use(cors({
-    origin: process.env.NODE_ENV === 'production'
-        ? process.env.FRONTEND_URL
-        : ['http://localhost:5173', 'http://localhost:3000'],
-    credentials: true
-}));
+// Middleware
+app.use(cors()); // Allow all origins for the assignment to ensure it works smoothly
 app.use(express.json({ limit: '1mb' }));
 
 // Health check endpoint
